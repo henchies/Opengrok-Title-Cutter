@@ -1,0 +1,25 @@
+{
+  "name": "Opengrok Title Cutter",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Removes the title until after the last '/' on opengrok and androidxref pages, showing filenames in the tabs like in an IDE.",
+  "author": "Henrik Nilsson",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://androidxref.com/*",
+        "https://androidxref.com/*",
+        "http://opengrok.sonyericsson.net/*",
+        "https://opengrok.sonyericsson.net/*"
+      ],
+      "js": [
+        "src/inject/inject.js"
+      ]
+    }
+  ]
+}
